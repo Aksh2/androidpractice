@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1076107486543",
+    "project_id": "pushnotificationtest-bcad5",
+    "storage_bucket": "pushnotificationtest-bcad5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076107486543:android:1dbd626dcbda71ad7cd13a",
+        "android_client_info": {
+          "package_name": "com.learning.pushnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076107486543-l3mfnrnt0rhfp1201d13hq695188gjqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC61Az-ldrfUyZaSlxOV-gk59kw92tjW6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076107486543-l3mfnrnt0rhfp1201d13hq695188gjqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
