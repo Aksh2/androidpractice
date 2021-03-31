@@ -1,12 +1,17 @@
 package com.learning.pagingapp.network
 
+import android.drm.DrmStore
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import com.learning.pagingapp.data.News
+import com.learning.pagingapp.data.Response
 import com.learning.pagingapp.data.State
 import io.reactivex.Completable
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.functions.Action
 import io.reactivex.internal.disposables.ArrayCompositeDisposable
+import io.reactivex.schedulers.Schedulers
 
 class NewsDataSource (
     private val networkService: NetworkService,
@@ -20,14 +25,62 @@ class NewsDataSource (
         params: LoadInitialParams<Int>,
         callback: LoadInitialCallback<Int, News>
     ) {
+        updateState(State.LOADING)
+        compositeDisposable.add(
+                networkService.getNews(1, params.requestedLoadSize)
+                        .subscribe ({ reponse: Response? ->
+                            updateState(State.DONE)
+                            callback.onResult(reponse?.news!!,
+                                    null,
+                                    2)
+                        },{
+                            updateState(State.ERROR)
+                            setRetry(Action{ loadInitial(params, callback)})
+                        })
+        )
 
     }
 
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, News>) {
-        TODO("Not yet implemented")
+        updateState(State.LOADING)
+        compositeDisposable.add(
+                networkService.getNews(params.key,params.requestedLoadSize)
+                        .subscribe({
+                            response: Response? ->
+                            updateState(State.DONE)
+                            callback.onResult(  response?.news!!, params.key + 1)
+                        },{
+                            error->
+                            updateState(State.ERROR)
+                            setRetry(Action { loadAfter(params, callback) })
+                        })
+        )
+
     }
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, News>) {
-        TODO("Not yet implemented")
+    }
+
+    private fun updateState(state: State){
+        this.state.postValue(state)
+    }
+
+
+
+    fun retry(){
+        if(retryCompletable!=null){
+            compositeDisposable.add(retryCompletable!!
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe())
+        }
+    }
+
+    fun setRetry(action: Action?){
+        retryCompletable = if (action == null){
+            null
+        } else{
+            Completable.fromAction(action)
+        }
     }
 }
