@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="@dimen/card_elevation"
+    app:cardCornerRadius="4dp"
+    android:layout_margin="8dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <TextView
+            android:id="@+id/placeTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Cloud Nine"
+            android:textAlignment="textStart"
+            app:layout_constraintStart_toEndOf="@id/totalSlotsTv"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/TextAppearance.AppCompat.Body2"
+            />
+
+        <TextView
+            android:id="@+id/addressTv"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            tools:text="No6361 1st Floor - North Wing Cloudnine Hospital Horamavu Village K R Puram Hobli Bengaluru 560043"
+            app:layout_constraintStart_toEndOf="@id/totalSlotsTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="@dimen/address_padding_top"
+            app:layout_constraintTop_toBottomOf="@id/placeTv"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+
+
+        <TextView
+            android:id="@+id/vaccineTypeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Paid"
+            style="@style/paidTextView"
+            app:layout_constraintStart_toEndOf="@id/placeTv"
+            app:layout_constraintTop_toTopOf="@id/placeTv"
+            app:layout_constraintBottom_toBottomOf="@id/placeTv"
+            />
+
+
+        <TextView
+            android:id="@+id/totalSlotsTv"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="@dimen/match_constraint"
+            style="@style/slotTextView"
+            tools:text="Slots:\n 18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/placeTv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/walkinTv"
+            />
+
+        <TextView android:id="@+id/feeTv"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            tools:text="₹750"
+            app:layout_constraintTop_toTopOf="@id/vaccineTypeTv"
+            app:layout_constraintStart_toEndOf="@id/vaccineTypeTv"
+            style="@style/feeTextView"/>
+
+        <TextView
+            android:id="@+id/timeSlotTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/addressTv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/addressTv"
+            android:drawableStart="@android:drawable/ic_lock_idle_alarm"
+            android:drawablePadding="4dp"
+            android:textColor="@color/indigo_700"
+            android:drawableTint="@color/indigo_700"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:background="@drawable/rounded_bg"
+            android:backgroundTint="#bbdefb"
+            android:padding="2dp"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            tools:text="7:00pm - 5:00pm"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+        android:id="@+id/walkinTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/totalSlotsTv"
+        app:layout_constraintBottom_toBottomOf="@id/timeSlotTv"
+        app:layout_constraintStart_toStartOf="@id/totalSlotsTv"
+        app:layout_constraintEnd_toEndOf="@id/totalSlotsTv"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        tools:text="Walk-In"
+        style="@style/walkinTextView"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

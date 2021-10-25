@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="activity_margins">16dp</dimen>
+
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_radius">16dp</dimen>
+
+    <dimen name="match_constraint">0dp</dimen>
+
+    <dimen name="address_padding_top">4dp</dimen>
+    <dimen name="dimen_60">60dp</dimen>
+    <dimen name="animation_view_height">128dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_12">12dp</dimen>
+</resources>

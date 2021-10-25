@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/activity_margins">
+   <TextView
+       android:id="@+id/scheduleTv"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:text="@string/title_schedule"
+       style="@style/TextAppearance.MaterialComponents.Headline6"
+       />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:tint="@color/purple_500"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/frequencyFilterTil"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scheduleTv"
+        android:layout_margin="8dp"
+        android:labelFor="@id/hourFilterActv"
+        android:hint="@string/hint_dropdown_frequency">
+    <AutoCompleteTextView
+        android:id="@+id/hourFilterActv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pincodeTil"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@id/frequencyFilterTil"
+        app:layout_constraintTop_toBottomOf="@id/frequencyFilterTil"
+        app:layout_constraintEnd_toEndOf="@id/frequencyFilterTil"
+        android:hint="@string/hint_pincode"
+        android:labelFor="@id/vaccineActv">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pincodeTiet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/pincodeTil"
+        app:layout_constraintStart_toStartOf="@id/pincodeTil"
+        app:layout_constraintEnd_toEndOf="@id/pincodeTil"
+        android:text="@string/button_text_schedule"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
