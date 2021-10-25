@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MoviesBrowser</string>
+    <string name="text_movie_poster">Movie Poster</string>
+    <string name="submit_btn_text">Submit</string>
+    <string name="title_placeholder_text"><b>Title:</b> %s</string>
+    <string name="genre_placeholder_text"><b>Genre:</b> %s</string>
+    <string name="releasedate_placeholder_text">Release Date: %s</string>
+    <string name="description_placeholder_text">Description: %s</string>
+    <string name="search_movies_txt">Search Movies</string>
+    <string name="movie_detail_activity_title">Movie Details</string>
+
+</resources>
