@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ProjectC</string>
+    <string name="hint_dropdown_age_group">Age Group</string>
+    <string name="hint_dropdown_vaccine">Vaccine</string>
+    <string name="hint_dropdown_dosetype">Dose Type</string>
+    <string name="hint_dropdown_walkin">Walk In</string>
+    <string name="hint_dropdown_frequency">Frequency</string>
+    <string name="hint_pincode">Pincode</string>
+    <string name="title_schedule">Schedule To Find Slots</string>
+    <string name="button_text_schedule">Schedule</string>
+    <string name="text_ok">Ok</string>
+</resources>

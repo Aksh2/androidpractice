@@ -1,0 +1,61 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ProjectC" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/indigo_500</item>
+        <item name="colorSecondaryVariant">@color/indigo_700</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="highlightedTextView">
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingEnd">6dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+
+    </style>
+
+    <style name="paidTextView" parent="highlightedTextView">
+        <item name="android:background">@drawable/rounded_bg</item>
+        <item name="android:textColor">@color/orange_700</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:drawableTint">@color/orange_700</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_paid_24</item>
+    </style>
+
+    <style name="slotTextView">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:drawableTop">@android:drawable/ic_menu_today</item>
+        <item name="android:drawableTint">@color/purple_700</item>
+
+    </style>
+
+    <style name="feeTextView" parent="highlightedTextView">
+        <item name ="android:textColor">@color/purple_700</item>
+        <item name="android:background">@drawable/rounded_bg</item>
+        <item name="android:backgroundTint">#d1c4e9</item>
+        <item name="android:layout_marginStart">4dp</item>
+    </style>
+
+    <style name="walkinTextView" parent="highlightedTextView">
+        <item name ="android:textColor">@color/green_500</item>
+        <item name="android:background">@drawable/rounded_bg</item>
+        <item name="android:backgroundTint">@color/green_200</item>
+    </style>
+
+    <style name="buttonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+</resources>

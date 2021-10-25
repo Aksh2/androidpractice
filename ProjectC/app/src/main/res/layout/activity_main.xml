@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/ageFilterTil"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+           android:layout_width="@dimen/match_constraint"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           android:layout_margin="8dp"
+           app:layout_constraintEnd_toStartOf="@id/VaccineTil"
+           android:labelFor="@id/ageFilterActv"
+           android:hint="@string/hint_dropdown_age_group">
+           <AutoCompleteTextView
+               android:id="@+id/ageFilterActv"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:inputType="none"/>
+       </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/VaccineTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ageFilterTil"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="8dp"
+            android:hint="@string/hint_dropdown_vaccine"
+            android:labelFor="@id/vaccineActv">
+            <AutoCompleteTextView
+                android:id="@+id/vaccineActv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+       </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/doseTypeTil"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ageFilterTil"
+        app:layout_constraintEnd_toStartOf="@id/walkinTil"
+        android:layout_margin="8dp"
+        android:labelFor="@id/doseTypeActv"
+        android:hint="@string/hint_dropdown_dosetype">
+        <AutoCompleteTextView
+            android:id="@+id/doseTypeActv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/walkinTil"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/doseTypeTil"
+        app:layout_constraintTop_toBottomOf="@id/ageFilterTil"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:labelFor="@id/wakinActv"
+        android:hint="@string/hint_dropdown_walkin">
+        <AutoCompleteTextView
+            android:id="@+id/wakinActv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        tools:listitem="@layout/item_vaccine_slot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/walkinTil" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

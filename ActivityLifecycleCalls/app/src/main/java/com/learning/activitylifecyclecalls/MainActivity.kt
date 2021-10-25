@@ -1,8 +1,10 @@
 package com.learning.activitylifecyclecalls
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "state"
@@ -10,6 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(TAG,"MainActivity: onCreate()")
+        activityTwoBtn.setOnClickListener {
+            val intent = Intent(this, ActivityTwo::class.java)
+            startActivity(intent)
+        }
 
     }
 
